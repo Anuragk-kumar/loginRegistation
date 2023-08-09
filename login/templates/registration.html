@@ -1,0 +1,85 @@
+<!--================ Start Registration Area =================-->
+
+<!--================ Start Content Area =================-->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="blog-banner-area" id="category">
+   <div class="container h-100">
+      <div class="blog-banner">
+         <div class="text-center">
+            <h1>Register</h1>
+            <nav aria-label="breadcrumb" class="banner-breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Register</li>
+               </ol>
+            </nav>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- ================ End Content area ================= -->
+<!-- Alerts -->
+<section style="padding-top: 20px;" >
+   {%include 'alert.html' %}
+</section>
+<!--================Login Box Area =================-->
+<section class="login_box_area section-margin">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-6">
+            <div class="login_box_img">
+               <div class="hover">
+                  <h4>Already have an account?</h4>
+                  <p>There are advances being made in science and technology everyday, and a good example of this is the</p>
+                  <a class="button button-account" href="/">Login Now</a>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6">
+            <div class="login_form_inner register_form_inner">
+               <h3>Create an account</h3>
+               <form class="row login_form" id="register_form" enctype="multipart/form-data" action="{% url 'user_registration' %}" method="post">
+                    {% csrf_token %}
+                  <div class="col-md-12 form-group">
+                     <input value="{{value.first_name}}" name="firstname" type="text" class="form-control" id="fname" placeholder="First name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'first Name'">
+                  </div>
+                  <div class="col-md-12 form-group">
+                     <input value="{{value.last_name}}" name="lastname" type="text" class="form-control" id="lname" placeholder="Last name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'">
+                  </div>
+                  <div class="col-md-12 form-group">
+                     <input name="pic" type="file" class="form-control" id="lname" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Profile Picture'">
+                  </div>
+                  <div class="col-md-12 form-group">
+                     <input value="{{value.username}}" name="username" type="text" class="form-control" id="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+                  </div>
+                  <div class="col-md-12 form-group">
+                     <input value="{{value.email}}" name="email" type="text" class="form-control" id="email" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">
+                  </div>
+                  <div class="col-md-12 form-group">
+                     <input name="password" type="text" class="form-control" id="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+                  </div>
+                  <div class="col-md-12 form-group">
+                     <input name="cpassword" type="text" class="form-control" id="confirmPassword" name="confirmpassword" placeholder="Confirm Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirm Password'">
+                  </div>
+                  
+                  <div class="col-md-12 form-group">
+                     <div class="creat_account">
+                        <input type="checkbox" id="f-option2" name="agree">
+                        <label for="f-option2">Agree Our Terms & Conditions</label>
+                     </div>
+                  </div>
+                  <div class="col-md-12 form-group">
+                     <button type="submit" value="submit" class="button  w-100">Register</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!--================End Login Box Area =================-->
+{% endblock %}
+<!--================ End Registration Area =================-->

@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  {%  load static %}
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Login System</title>
+      <link rel="icon" href="{% static 'img/login.jpg' %}" type="image/png">
+      <link rel="stylesheet" href="{% static 'features/bootstrap/bootstrap.min.css' %} ">
+      <link rel="stylesheet" href="{% static 'features/fontawesome/css/all.min.css' %}">
+      <link rel="stylesheet" href="{% static 'features/fontawesome/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'features/linericon/style.css' %}">
+      <link rel="stylesheet" href="{% static 'features/themify-icons/themify-icons.css' %}">
+      <link rel="stylesheet" href="{% static 'features/nice-select/nice-select.css' %}">
+      <link rel="stylesheet" href="{% static 'features/owl-carousel/owl.theme.default.min.css' %}">
+      <link rel="stylesheet" href="{% static 'features/owl-carousel/owl.carousel.min.css' %}">
+      <link rel="stylesheet" href="{% static 'features/nouislider/nouislider.min.css' %}">
+      <link rel="stylesheet" href="{%static 'css/stylemelody.css' %}">
+      <link rel="stylesheet" href="{% static 'css/main.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   </head>
+   <body>
+      {% include 'header.html' %}
+      {% block content %}{% endblock %}
+      {% include 'footer.html' %}
+      <script src="{% static 'features/jquery/jquery-3.2.1.min.js' %}"></script>
+      <script src="{% static 'features/bootstrap/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'features/skrollr.min.js' %}"></script>
+      <script src="{% static 'features/owl-carousel/owl.carousel.min.js' %}"></script>
+      <script src="{% static 'features/nice-select/jquery.nice-select.min.js' %}"></script>
+      <script src="{% static 'features/jquery.ajaxchimp.min.js' %}"></script>
+      <script src="{% static 'features/mail-script.js' %}"></script>
+      <script src="{% static 'features/skrollr.min.js' %}"></script>
+      <script src="{% static 'features/jquery.form.js' %} "></script>
+      <script src="{% static 'features/jquery.validate.min.js' %}"></script>
+      <script src="{% static 'features/contact.js' %}"></script>
+      <script src="{%static 'features/nouislider/nouislider.min.js' %}"></script>
+      <script src="{% static 'js/main.js' %}"></script>
+      <script>
+         $(window).stellar({
+             responsive: true,
+             parallaxBackgrounds: true,
+             parallaxElements: true,
+             horizontalScrolling: false,
+             hideDistantElements: false,
+             scrollProperty: 'scroll'
+           });
+         
+      </script>
+      <script type="text/javascript">
+         let thumbnails = document.getElementsByClassName('thumbnail')
+         
+         let activeImages = document.getElementsByClassName('active')
+         
+         for (var i=0; i < thumbnails.length; i++){
+         
+         	thumbnails[i].addEventListener('mouseover', function(){
+         		console.log(activeImages)
+         		
+         		if (activeImages.length > 0){
+         			activeImages[0].classList.remove('active')
+         		}
+         		
+         
+         		this.classList.add('active')
+         		document.getElementById('featured').src = this.src
+         	})
+         }
+         
+         
+         let buttonRight = document.getElementById('slideRight');
+         let buttonLeft = document.getElementById('slideLeft');
+         
+         buttonLeft.addEventListener('click', function(){
+         	document.getElementById('slider').scrollLeft -= 180
+         })
+         
+         buttonRight.addEventListener('click', function(){
+         	document.getElementById('slider').scrollLeft += 180
+         })
+         
+         
+      </script>
+   </body>
+</html>
